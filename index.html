@@ -298,24 +298,69 @@ section h2 {
 }
 
 /* =====================
-   REVIEWS
+   REVIEWS / FEEDBACK (NGCS STYLE)
 ===================== */
 #reviews {
-  background: var(--cream);
+  background: linear-gradient(to bottom, var(--cream), var(--white));
   padding: 4rem 2rem;
+  text-align: center;
 }
 
 .feedback-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-.feedback-image {
-  width: 300px;
+/* Individual feedback card */
+.feedback-container h3 {
+  background: var(--white);
+  padding: 1.5rem 1.4rem 1rem;
   border-radius: 22px;
-  box-shadow: 0 10px 25px rgba(201,124,138,0.2);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4f3f3f;
+  box-shadow: 0 10px 25px rgba(201,124,138,0.15);
+  position: relative;
+}
+
+/* Quote mark */
+.feedback-container h3::before {
+  content: "“";
+  font-size: 3rem;
+  color: var(--soft-blush);
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  font-family: serif;
+}
+
+/* Name under quote */
+.feedback-container p {
+  margin-top: -0.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7a6a6a;
+}
+
+/* Read more link */
+#reviews .read-more {
+  margin-top: 2rem;
+}
+
+#reviews .read-more a {
+  font-size: 0.95rem;
+  color: var(--main-pink);
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+#reviews .read-more a:hover {
+  opacity: 0.7;
 }
 
 /* =====================
@@ -536,17 +581,31 @@ begins with the initial of our crafter’s family name, making it even more pers
     </div>
 </section>
 
-    <!-- Feedback Section -->
+<!-- Feedback Section -->
 <section id="reviews">
   <h2>Customer Feedback</h2>
+
   <div class="feedback-container">
-    <h3>"ganda talaga teh pagkagawa</h3>
-    <p>Ms. R</p>
-    <h3>Thank you beb! Ganda pala ng pagka balot. Need mo na mag hire ng manpower sa vday!</h3>
-    <p>Ms. K</p>
-    <h3>Thank you so much po, super ganda</h3>
-    <p>Ms. E</p>
+
+    <div class="feedback-card">
+      <p class="feedback-text">"Ganda talaga teh pagkagawa."</p>
+      <span class="feedback-author">– Ms. R</span>
+    </div>
+
+    <div class="feedback-card">
+      <p class="feedback-text">
+        "Thank you beb! Ganda pala ng pagkakabalot. Need mo na mag-hire ng manpower sa V-Day!"
+      </p>
+      <span class="feedback-author">– Ms. K</span>
+    </div>
+
+    <div class="feedback-card">
+      <p class="feedback-text">"Thank you so much po, super ganda."</p>
+      <span class="feedback-author">– Ms. E</span>
+    </div>
+
   </div>
+
   <div class="read-more">
     <a href="#more-reviews">Read more &gt;&gt;</a>
   </div>
