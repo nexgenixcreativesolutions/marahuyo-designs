@@ -18,12 +18,12 @@
    CSS VARIABLES
 ===================== */
 :root {
-  --cream: #fffaf6;
-  --soft-pink: #f6c1cc;
-  --old-rose: #c97c8a;
-  --dusty-rose: #e8a6b5;
-  --sage-green: #a8c3b1;
-  --text-main: #4a3b3b;
+  --cream: #fff7f2;          /* softer cream, less eye strain */
+  --soft-pink: #f1b6c3;      /* muted pastel pink */
+  --old-rose: #b86777;       /* deeper rose for contrast */
+  --dusty-rose: #d98a9a;     /* warm accent */
+  --sage-green: #93b2a0;     /* slightly deeper sage */
+  --text-main: #3f2f2f;      /* darker text = readability */
   --white: #ffffff;
 }
 
@@ -73,6 +73,25 @@ img {
   height: 50px;
   margin-right: 10px;
   border-radius: 50%;
+}
+    
+/* Logo container alignment */`
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .logo-title {
@@ -370,6 +389,13 @@ footer {
   padding: 1.5rem;
   text-align: center;
   font-size: 0.9rem;
+}
+footer img {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 6px;
+  opacity: 0.9;
 }
 
 /* =====================
