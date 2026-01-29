@@ -68,39 +68,34 @@ img {
   box-shadow: 0 6px 15px rgba(201,124,138,0.15);
   backdrop-filter: blur(8px);
 }
-
-#navbar img {
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 50%;
-}
     
-/* Logo container alignment */`
+/* Logo container – HARD ALIGN FIX */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
+/* Logo image */
 .logo img {
-  height: 48px;
+  height: 46px;
   width: auto;
   border-radius: 50%;
+  display: block;
 }
 
+/* Logo title */
 .logo-title {
+  margin: 0;                 /* 🚨 removes <p> default spacing */
   display: flex;
   align-items: center;
-  line-height: 1;
-}
-
-.logo-title {
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: 1.3rem;
   color: var(--old-rose);
+  line-height: 1;             /* 🚨 fixes baseline issue */
 }
-
+    
 .nav-list {
   list-style: none;
   display: flex;
