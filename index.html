@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marahuyo Designs</title>
+  <link rel="icon" type="image/x-icon" href="zse.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">  
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: #fff0f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Navbar */
+    #navbar {
+      background: #ffb6c1;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    #navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    #navbar img {
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    
+    .logo-title {
+      font-family: "Edu NSW ACT Cursive", cursive;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.2rem;
+      color: #b22222;
+    }
+
+    
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-list li a {
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-list li a:hover {
+      color: #b22222;
+    }
+    
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .hamburger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background: #333;
+    }
+
+    /* Hero Section */
+    #welcome-section {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 6rem 2rem;
+      background-image: url('welcome image.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      position: relative;
+      min-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      #welcome-section {
+        background-image: url('welcome-image-mobile.jpeg')!important;
+        background-color: pink;
+      }
+    }
+
+    #welcome-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      text-align: left;
+      padding: 1rem 2rem;
+    }
+
+.welcome-content .slogan {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  color: #b22222;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-content p {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  color: #333;
+  padding: 1rem;
+}
+
+    /* About Section */
+    #about_us {
+      padding: 4rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+    #about_us h2 {
+      font-size: 2rem;
+      color: #b22222;
+      margin-bottom: 1rem;
+    }
+    #about_us p {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .wrapped-image {
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #ffb6c1;
+      padding: 1.5rem;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+/* Distributor Showcase Section */
+#client_showcase {
+  background: #fff0f5;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+#client_showcase h2 {
+  color: #b22222;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+  gap: 2rem;
+}
+
+.client-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.distributor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.distributor-card {
+  background: #fff;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.distributor-card:hover {
+  transform: translateY(-5px);
+}
+
+.distributor-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.distributor-card h4 {
+  margin: 0.5rem 0 0.2rem;
+  color: #b22222;
+  font-size: 1rem;
+}
+
+.distributor-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Partners Section */
+#partners {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+#partners h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 2rem;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.partner-logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
+    /* Products Section */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 460px; /* Uniform height */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  color: #b22222;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-size: 0.85rem; 
+  color: #555;
+  margin-bottom: auto;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.buy-button {
+  background: #b22222;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+}
+
+.buy-button:hover {
+  background: #8b0000;
+}
+
+/* Feedback Section */
+#reviews {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#reviews h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 2rem;
+}
+
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-image {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feedback-image:hover {
+  transform: scale(1.03);
+}
+
+.read-more a {
+  color: #b22222;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more a:hover {
+  color: #8b0000;
+}
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        background: #fff0f5;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .nav-list.active {
+        display: flex;
+      }
+      .hamburger-menu {
+        display: flex;
+      }
+      .slogan {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu(){
+      document.querySelector(".nav-list").classList.toggle("active");
+    }
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="logo">
+      <img src="zse.jpg" alt="logo" />
+      <p class="logo-title"><a href="#">Zyanna'Skin Essential</a></p>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about_us">About Us</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+<!-- Welcome Section -->
+<section id="welcome-section">
+  <div class="welcome-content">
+    <h1 class="slogan">Marahuyo Designs</h1>
+    <p>Be enchanted by blooms made with love, intention, and a sprinkle of fairy dust</p>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section id="about_us">
+    <h2>About Us</h2>
+    <p>Marahuyo Designs was born from a love for creating beauty that lingers. Inspired by the Filipino word <i>Marahuyo</i>, it captures the feeling of being deeply captivated and gently enchanted. It is that quiet moment when beauty, love, or emotion pulls you in so completely that everything else fades away. Not loud or overwhelming, just a soft sense of wonder and admiration that stays in the heart 🤍</p>
+    <p>We chose this name because it reflects exactly what we hope you feel when you see our creations. A sense of enchantment, warmth, and magic woven into every piece. Marahuyo also
+begins with the initial of our crafter’s family name, making it even more personal and deeply meaningful to us ✨🩷</p>
+    <p>Each bouquet is carefully handmade petal by petal, with intention, patience, and heart. Our designs are more than floral arrangements. They are keepsakes crafted to celebrate love, milestones, and life’s most meaningful moments.</p>
+    <p>At Marahuyo Designs, we believe handmade pieces carry a special kind of magic. One that cannot be rushed or replicated. Our hope is simple. To create blooms that make you pause, feel, and fall in love with the moment.</p>
+  <div class="read-more">
+    <a href="#learn-more-about-us">Learn more &gt;&gt;</a>
+  </div>
+
+        <h3>Why Choose Us?</h3>
+    <div class="container">
+      <img src="zse.jpg" alt="About us image" class="wrapped-image">
+      <img src="zse.jpg" alt="About us image" class="wrapped-image">
+      <img src="zse.jpg" alt="About us image" class="wrapped-image">
+      <img src="zse.jpg" alt="About us image" class="wrapped-image">
+    </div>
+
+  </section>
+  
+    <!-- Products Section -->
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="products-container">
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="product1.png" alt="Milky Glow Soap" class="product-image">
+      <h3>Milky Glow Soap</h3>
+      <p class="product-description"> Our flagship MilkyGlow Soap is formulated with Glutathione, Alpha Arbutin, and Niacinamide to provide 10x Whitening while Collagen, Goat’s Milk, and natural oils deeply hydrate and renew the skin.</p>
+      <p class="product-price">₱150</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="product2.png" alt="24K Gold Serum" class="product-image">
+      <h3>24K Gold Serum</h3>
+      <p class="product-description">Elevate your skincare routine with 24K Gold Serum, a luxurious blend of Niacinamide, Alpha Arbutin, and Collagen that helps reduce dark spots, enhance elasticity, and boost radiance.</p>
+      <p class="product-price">₱250</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="product3.png" alt="Kojic Papaya Soap" class="product-image">
+      <h3>Kojic Papaya Soap</h3>
+      <p class="product-description">This Kojic Soap, powered with Kojic Dipalmitate, Papaya Extract, and Grapeseed Extract, gently brightens and evens skin tone while Coconut Oil, Aloe Vera, Glycerin, and Vitamin E deeply moisturize and protect for smoother, radiant, and healthy-looking skin.</p>
+      <p class="product-price">₱89</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="product4.png" alt="Glow Whitening Lotion" class="product-image">
+      <h3>Glow Whitening Lotion</h3>
+      <p class="product-description">This Glow Whitening lotion, enriched with Kojic Acid, Glutathione, Alpha Arbutin, and Niacinamide, delivers intense skin brightening while Marine Collagen, Shea Butter, Aloe Vera, and Vitamin C & E deeply nourish, protect, and keep your skin smooth, radiant, and youthful.</p>
+      <p class="product-price">₱280</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="product5.png" alt="Ultimate Rejuvinating Set" class="product-image">
+      <h3>Ultimate Rejuvinating Set</h3>
+      <p class="product-description">Toner • Night Cream • Day Cream • Kojic Soap : Skin rejuvenation treatments can reduce pore size, improve the quality and quantity of dermal collagen and elastin, tighten the deep connective tissues in the face, and even out superficial blemishes such as blotchiness. (not advisable in very sensitive skin)</p>
+      <p class="product-price">₱280</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+  </div>
+</section>
+
+    <!-- Feedback Section -->
+<section id="reviews">
+  <h2>Customer Feedback</h2>
+  <div class="feedback-container">
+    <img src="zse.jpg" alt="Feedback 1" class="feedback-image">
+    <img src="zse.jpg" alt="Feedback 2" class="feedback-image">
+    <img src="zse.jpg" alt="Feedback 3" class="feedback-image">
+  </div>
+  <div class="read-more">
+    <a href="#more-reviews">Read more &gt;&gt;</a>
+  </div>
+</section>
+
+<!-- Distributor Showcase Section -->
+<section id="client_showcase">
+<h2>Regional Distributors</h2>
+<div class="marquee-container">
+  <div class="marquee-track">
+    <!-- Original distributor cards -->
+    <div class="distributor-cards">
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 1">
+        <h4>Danhyl Quinio</h4>
+        <p>Region IX - Zamboanga City</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 2">
+        <h4>Arnel Lima</h4>
+        <p>Region VI - Western Visayas</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Mark Alvin Ian</h4>
+        <p>Region IV A - Calabarzon</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Judith Villanueva</h4>
+        <p>Region VII - Central Visayas</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>May-Ann Castillo</h4>
+        <p>NCR South - Metro Manila</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Jesrelle Morecho</h4>
+        <p>Region V - Bicol Region</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Anatolia Pajantoy</h4>
+        <p>Region I - Ilocos Region</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Kim Keith Guerrero</h4>
+        <p>Region III - Central Luzon</p>
+      </div>
+    </div>
+
+    <!-- Duplicate the whole block for seamless scrolling -->
+    <div class="distributor-cards">
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 1">
+        <h4>Danhyl Quinio</h4>
+        <p>Region IX - Zamboanga City</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 2">
+        <h4>Arnel Lima</h4>
+        <p>Region VI - Western Visayas</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Mark Alvin Ian</h4>
+        <p>Region IV A - Calabarzon</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Judith Villanueva</h4>
+        <p>Region VII - Central Visayas</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>May-Ann Castillo</h4>
+        <p>NCR South - Metro Manila</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Jesrelle Morecho</h4>
+        <p>Region V - Bicol Region</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Anatolia Pajantoy</h4>
+        <p>Region I - Ilocos Region</p>
+      </div>
+      <div class="distributor-card">
+        <img src="zse.jpg" alt="Distributor 4">
+        <h4>Kim Keith Guerrero</h4>
+        <p>Region III - Central Luzon</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  
+<!-- Partners Section -->
+<section id="partners">
+  <h2>Our Trusted Partners</h2>
+  <div class="partners-container">
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+  </div>
+</section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Zyanna'Skin Essential. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
