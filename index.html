@@ -134,10 +134,15 @@ img {
   gap: 5px;
 }
 
-.hamburger-menu .bar {
-  width: 25px;
+  .hamburger-menu .bar {
+  width: 26px;
   height: 3px;
-  background: var(--old-rose);
+  background: var(--main-pink);
+  border-radius: 2px;
+}
+
+.hamburger-menu:hover .bar {
+  background: #c76a76;
 }
 
 /* =====================
@@ -347,7 +352,7 @@ section h2 {
   color: #7a6a6a;
 }
 
-/* Read more link */
+/* Read more and View more link */
 #reviews .read-more, #products .view-more {
   margin-top: 2rem;
 }
@@ -361,6 +366,12 @@ section h2 {
 
 #reviews .read-more a:hover, #products .view-more a:hover {
   opacity: 0.7;
+}
+
+.view-more {
+  grid-column: 1 / -1;   /* span full grid width */
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .feedback-card {
