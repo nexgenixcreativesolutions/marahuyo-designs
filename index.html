@@ -18,14 +18,18 @@
    CSS VARIABLES
 ===================== */
 :root {
-  --cream: #fff7f2;          /* softer cream, less eye strain */
-  --soft-pink: #f1b6c3;      /* muted pastel pink */
-  --old-rose: #b86777;       /* deeper rose for contrast */
-  --dusty-rose: #d98a9a;     /* warm accent */
-  --sage-green: #93b2a0;     /* slightly deeper sage */
-  --text-main: #3f2f2f;      /* darker text = readability */
+  /* MAIN BRAND COLORS (from reference image) */
+  --main-pink: #D97F8B;      /* Gummy Pink – primary */
+  --soft-blush: #FFC2BE;     /* Soft romantic pink */
+  --cream: #FEF0FF;          /* Light creamy background */
+  --sage-green: #ADB680;     /* Floral greenery */
+  --warm-neutral: #E0CFC3;   /* Soft beige */
+
+  /* TEXT & UI */
+  --text-main: #3f2f2f;      /* Dark brown for readability */
   --white: #ffffff;
 }
+
 
 /* =====================
    RESET & BASE
@@ -57,7 +61,7 @@ img {
    NAVBAR
 ===================== */
 #navbar {
-  background: rgba(255, 250, 246, 0.95);
+  background: rgba(254, 240, 255, 0.92);
   padding: 1rem 2.5rem;
   display: flex;
   justify-content: space-between;
@@ -92,7 +96,7 @@ img {
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: 1.3rem;
-  color: var(--old-rose);
+  color: var(--main-pink);
   line-height: 1;             /* 🚨 fixes baseline issue */
 }
     
@@ -115,7 +119,7 @@ img {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--old-rose);
+  background: var(--main-pink);
   transition: width 0.3s ease;
 }
 
@@ -188,7 +192,11 @@ section h2 {
 ===================== */
 #about_us {
   padding: 4rem 2rem;
-  background: linear-gradient(to bottom, var(--cream), var(--white));
+  background: linear-gradient(
+    to bottom,
+    var(--cream),
+    var(--white)
+  );
   text-align: center;
 }
 
@@ -259,7 +267,11 @@ section h2 {
 }
 
 .buy-button {
-  background: linear-gradient(135deg, var(--soft-pink), var(--old-rose));
+   background: linear-gradient(
+    135deg,
+    var(--soft-blush),
+    var(--main-pink)
+  );
   color: white;
   border: none;
   padding: 0.6rem 1.4rem;
@@ -269,7 +281,11 @@ section h2 {
 }
 
 .buy-button:hover {
-  background: linear-gradient(135deg, var(--old-rose), var(--dusty-rose));
+  background: linear-gradient(
+    135deg,
+    var(--main-pink),
+    var(--warm-neutral)
+  );
 }
 
 /* =====================
@@ -380,7 +396,11 @@ section h2 {
    FOOTER
 ===================== */
 footer {
-  background: linear-gradient(to right, var(--soft-pink), var(--dusty-rose));
+  background: linear-gradient(
+    to right,
+    var(--soft-blush),
+    var(--main-pink)
+  );
   padding: 1.5rem;
   text-align: center;
   font-size: 0.9rem;
