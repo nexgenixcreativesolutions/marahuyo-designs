@@ -575,53 +575,6 @@ footer img {
     }
   </script>
 </head>
-  <script>
-document.querySelectorAll(".variant-card").forEach(card => {
-  const track = card.querySelector(".variant-track");
-  const variants = card.querySelectorAll(".variant");
-  const nextBtn = card.querySelector(".next");
-  const prevBtn = card.querySelector(".prev");
-
-  let index = 0;
-  let startX = 0;
-  let currentX = 0;
-
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  nextBtn?.addEventListener("click", () => {
-    index = (index + 1) % variants.length;
-    updateSlide();
-  });
-
-  prevBtn?.addEventListener("click", () => {
-    index = (index - 1 + variants.length) % variants.length;
-    updateSlide();
-  });
-
-  /* TOUCH SWIPE */
-  track.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  track.addEventListener("touchmove", e => {
-    currentX = e.touches[0].clientX;
-  });
-
-  track.addEventListener("touchend", () => {
-    const diff = startX - currentX;
-
-    if (diff > 50) {
-      index = Math.min(index + 1, variants.length - 1);
-    } else if (diff < -50) {
-      index = Math.max(index - 1, 0);
-    }
-
-    updateSlide();
-  });
-});
-</script>
 <body>
   <!-- Navigation Bar -->
   <nav id="navbar">
@@ -791,5 +744,54 @@ document.querySelectorAll(".variant-card").forEach(card => {
     <p>&copy; 2026 Marahuyo Designs. All Rights Reserved. </p>
     <a href="https://nexgenixcreativesolutions.github.io"><p>Powered by Nex Genix Creative Solutions <img src="ngcs.png" alt="NGCS Logo"></p></a>
   </footer>
+
+  <script>
+document.querySelectorAll(".variant-card").forEach(card => {
+  const track = card.querySelector(".variant-track");
+  const variants = card.querySelectorAll(".variant");
+  const nextBtn = card.querySelector(".next");
+  const prevBtn = card.querySelector(".prev");
+
+  let index = 0;
+  let startX = 0;
+  let currentX = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn?.addEventListener("click", () => {
+    index = (index + 1) % variants.length;
+    updateSlide();
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    index = (index - 1 + variants.length) % variants.length;
+    updateSlide();
+  });
+
+  /* TOUCH SWIPE */
+  track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchmove", e => {
+    currentX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", () => {
+    const diff = startX - currentX;
+
+    if (diff > 50) {
+      index = Math.min(index + 1, variants.length - 1);
+    } else if (diff < -50) {
+      index = Math.max(index - 1, 0);
+    }
+
+    updateSlide();
+  });
+});
+</script>
+
 </body>
 </html>
