@@ -568,6 +568,38 @@ footer img {
     display: none;
   }
 }
+
+/* =====================
+   🔥 IMAGE SQUARE FIX (GLOBAL)
+===================== */
+
+/* NORMAL PRODUCT IMAGES */
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* FORCE SQUARE */
+  object-fit: cover;       /* CROP NICELY */
+  object-position: center;
+  border-radius: 16px;
+  background: #f6eaea;
+}
+
+/* VARIANT SLIDER IMAGES */
+.variant img {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* FORCE SQUARE */
+  object-fit: cover;       /* CROP NICELY */
+  object-position: center;
+  border-radius: 16px;
+  background: #f6eaea;
+}
+
+    .variant img.no-crop,
+.product-image.no-crop {
+  object-fit: contain;
+  padding: 8px;
+  background: #f6eaea;
+}
+
   </style>
   <script>
     function toggleMenu(){
@@ -634,7 +666,6 @@ footer img {
       <img src="product2.jpg" alt="Gessa" class="product-image">
       <h3>Gessa</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -643,7 +674,6 @@ footer img {
       <img src="product3.jpg" alt="Liz in Beige" class="product-image">
       <h3>Liz in Beige</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -652,7 +682,6 @@ footer img {
       <img src="product5.jpg" alt="Sinara" class="product-image">
       <h3>Sinara</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -661,7 +690,6 @@ footer img {
       <img src="product7.jpg" alt="Nessa" class="product-image">
       <h3>Nessa</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -670,7 +698,6 @@ footer img {
       <img src="product17.jpg" alt="Lily" class="product-image">
       <h3>Lily</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -679,7 +706,6 @@ footer img {
       <img src="product4.jpg" alt="Wicked" class="product-image">
       <h3>Wicked</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
     
@@ -688,7 +714,6 @@ footer img {
       <img src="product6.jpg" alt="Alamara" class="product-image">
       <h3>Alamara</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -697,7 +722,6 @@ footer img {
       <img src="product8.jpeg" alt="Lia" class="product-image">
       <h3>Lia</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
     
@@ -706,7 +730,6 @@ footer img {
       <img src="product9.jpg" alt="Jaz" class="product-image">
       <h3>Jaz</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -715,7 +738,6 @@ footer img {
       <img src="product10.jpg" alt="Pia" class="product-image">
       <h3>Pia</h3>
       <p class="product-description"></p>
-      <p class="product-price">₱000</p>
       <button class="buy-button">Purchase</button>
     </div>
 
@@ -761,7 +783,6 @@ footer img {
   </div>
 
   <p class="product-description"></p>
-  <p class="product-price">₱000</p>
   <button class="buy-button">Purchase</button>
 </div>
 
