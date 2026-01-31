@@ -217,14 +217,16 @@ REVIEWS – TALK BUBBLES
   flex: 0 0 320px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔑 top & bottom */
   align-items: center;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  height: fit-content;
 }
 
 .review-person img {
   width: 100%;
   max-width: 300px;
-  margin-top: 2rem;
 }
 
 .person-name {
@@ -276,10 +278,30 @@ REVIEWS – TALK BUBBLES
    RESPONSIVE
 ===================== */
 @media (max-width: 768px) {
+
   .reviews-wrapper {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+  }
+
+  .review-person {
+    position: static;
+    transform: none;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Name near top */
+  .person-name {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Image near bottom */
+  .review-person img {
+    margin-top: 3rem;
+    margin-bottom: 4rem; /* keeps space above footer */
+    max-width: 240px;
   }
 
   .bubble {
@@ -290,7 +312,7 @@ REVIEWS – TALK BUBBLES
     display: none;
   }
 }
-    
+  
 /* =====================
    PINK GLOWING STARS
 ===================== */
