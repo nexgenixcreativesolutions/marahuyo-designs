@@ -613,6 +613,30 @@ footer img {
   background: #f6eaea;
 }
 
+    /* =====================
+   MOBILE SWIPE FOR PRODUCTS
+===================== */
+@media (max-width: 768px) {
+  .products-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-card {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+  }
+
+  /* Hide scrollbar (clean look) */
+  .products-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
   </style>
   <script>
     function toggleMenu(){
@@ -805,8 +829,8 @@ footer img {
     <div class="variant-track">
       <!-- Variant 1 -->
       <div class="variant">
-        <img src="product11.jpg" alt="Rad">
-        <h3>Rad</h3>
+        <img src="product13.png" alt="Rad in Pink">
+        <h3>Rad in pink</h3>
       </div>
 
       <!-- Variant 2 -->
@@ -817,8 +841,8 @@ footer img {
 
       <!-- Variant 3 -->
       <div class="variant">
-        <img src="product13.png" alt="Rad in Pink">
-        <h3>Rad in pink</h3>
+        <img src="product11.png" alt="Rad">
+        <h3>Rad</h3>
       </div>
 
       <!-- Variant 4 -->
