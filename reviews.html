@@ -5,251 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marahuyo Designs</title>
   <link rel="icon" type="image/x-icon" href="mdlogo.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">  
 
   <style>
-  /* =====================
-     CSS VARIABLES
-  ===================== */
-  :root {
-    --main-pink: #D97F8B;
-    --soft-blush: #FFC2BE;
-    --cream: #FEF0FF;
-    --sage-green: #ADB680;
-    --warm-neutral: #E0CFC3;
-    --text-main: #3f2f2f;
-    --white: #ffffff;
-  }
-
-  /* =====================
-     RESET & BASE
-  ===================== */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--cream);
-    color: var(--text-main);
-    line-height: 1.7;
-    font-family: "Cormorant Garamond", serif;
-  }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; height: auto; display: block; }
-
-  /* =====================
-     NAVBAR
-  ===================== */
-  #navbar {
-    background: rgba(254, 240, 255, 0.92);
-    padding: 1rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 6px 15px rgba(201,124,138,0.15);
-    backdrop-filter: blur(8px);
-  }
-  .logo { display: flex; align-items: center; gap: 0.6rem; }
-  .logo img { height: 46px; width: auto; border-radius: 50%; }
-  .logo-title { margin: 0; display: flex; align-items: center; font-family: "Playfair Display", serif; font-style: italic; font-size: 1.3rem; color: var(--main-pink); line-height: 1; }
-  .nav-list { list-style: none; display: flex; gap: 1.5rem; }
-  .nav-list li a { font-weight: 500; color: var(--text-main); position: relative; }
-  .nav-list li a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--main-pink); transition: width 0.3s ease; }
-  .nav-list li a:hover::after { width: 100%; }
-  .hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-  .hamburger-menu .bar { width: 26px; height: 3px; background: var(--main-pink); border-radius: 2px; }
-  .hamburger-menu:hover .bar { background: #c76a76; }
-
-  /* =====================
-     FOOTER
-  ===================== */
-  footer {
-    background: linear-gradient(to right, var(--soft-blush), var(--main-pink));
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  footer img { 
-    height: 18px; 
-    width: auto; 
-    vertical-align: middle; 
-    margin-left: 6px; 
-    opacity: 0.9; 
-    display: inline-block; 
-  }
-
-  /* =====================
-     REVIEWS SECTION
-  ===================== */
-  .reviews-section {
-    padding: 6rem 2.5rem;
-    min-height: 100vh;
-  }
-  .reviews-wrapper {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    align-items: stretch;
-    gap: 2.5rem;
-    min-height: 100%;
-  }
-
-  .review-person {
-    flex: 0 0 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: sticky;
-    top: 50%;
-    transform: translateY(-50%);
-    height: fit-content;
-  }
-  .review-person img { width: 100%; max-width: 300px; }
-
-  .mobile-person { display: none; }
-
-  .speech-bubbles {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.2rem;
-  }
-  .bubble {
-    background: var(--white);
-    padding: 1rem;
-    border-radius: 22px;
-    box-shadow: 0 10px 25px rgba(201,124,138,0.2);
-    position: relative;
-    max-width: 380px;
-  }
-  .bubble::before {
-    content: "";
-    position: absolute;
-    left: -14px;
-    bottom: 22px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 14px solid var(--white);
-  }
-  .bubble img { width: 100%; border-radius: 14px; display: block; }
-
-  .person-name {
-    margin-top: 0.8rem;
-    font-family: "Playfair Display", serif;
-    font-style: italic;
-    color: var(--main-pink);
-  }
-
-  .reviews-title {
-    display: none;
-    text-align: center;
-    font-family: "Playfair Display", serif;
-    font-style: italic;
-    color: var(--main-pink);
-    margin: 2.5rem 0 2rem 0;
-    font-size: 2rem;
-  }
-
-  .star-rating {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 0.35rem 0.7rem;
-    border-radius: 18px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--main-pink);
-    font-family: "Playfair Display", serif;
-    text-shadow: 0 0 4px rgba(217,127,139,0.6),0 0 8px rgba(217,127,139,0.5),0 0 14px rgba(217,127,139,0.4);
-    box-shadow: 0 6px 15px rgba(217,127,139,0.35), inset 0 0 8px rgba(217,127,139,0.25);
-    animation: softGlow 3.5s ease-in-out infinite;
-  }
-  @keyframes softGlow {
-    0%   { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
-    50%  { text-shadow: 0 0 10px rgba(217,127,139,0.7); }
-    100% { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
-  }
-
-  /* =====================
-     RESPONSIVE
-  ===================== */
-  @media (max-width: 768px){
-
-    /* Navbar */
-    .nav-list {
-      display: none; 
-      flex-direction: column; 
-      background: var(--white); 
-      position: absolute; 
-      top: 70px; 
-      left: 0;
-      right: 0;
-      padding: 1rem 2rem; 
-      border-radius: 20px; 
-      box-shadow: 0 10px 20px rgba(201,124,138,0.25); 
-      align-items: center; 
-      text-align: center;
-      gap: 1rem;
-      z-index: 999;
+    /* =====================
+       CSS VARIABLES
+    ===================== */
+    :root {
+      --main-pink: #D97F8B;
+      --soft-blush: #FFC2BE;
+      --cream: #FEF0FF;
+      --sage-green: #ADB680;
+      --warm-neutral: #E0CFC3;
+      --text-main: #3f2f2f;
+      --white: #ffffff;
     }
-    .nav-list.active { display: flex; }
-    .hamburger-menu { display: flex; }
 
-    /* Reviews Section */
-    .reviews-title { display: block; }
-    .review-person { display: none; }
-    .mobile-person { display: block; text-align: center; margin: 4rem auto 3rem; }
-    .mobile-person img { max-width: 240px; }
-    .reviews-wrapper { flex-direction: column; align-items: center; gap: 2rem; }
-    .bubble { max-width: 100%; }
-    .bubble::before { display: none; }
+    /* =====================
+       RESET & BASE
+    ===================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Footer */
-    footer {
+    body {
+      background: var(--cream);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* =====================
+       NAVBAR
+    ===================== */
+    #navbar {
+      background: rgba(254, 240, 255, 0.92);
+      padding: 1rem 2.5rem;
       display: flex;
-      flex-direction: column; 
-      align-items: center;    
-      gap: 0.5rem;            
-      text-align: center;     
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 6px 15px rgba(201,124,138,0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo img {
+      height: 46px;
+      border-radius: 50%;
+    }
+
+    .logo-title {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--main-pink);
+      line-height: 1;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-list li a {
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-list li a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--main-pink);
+      transition: width 0.3s ease;
+    }
+
+    .nav-list li a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger-menu .bar {
+      width: 26px;
+      height: 3px;
+      background: var(--main-pink);
+      border-radius: 2px;
+    }
+
+    /* =====================
+       REVIEWS SECTION (CLEANED)
+    ===================== */
+    .reviews-section {
+      padding: 2.5rem 2.5rem 3rem;
+    }
+
+    .reviews-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+      gap: 2rem;
+    }
+
+    .review-person {
+      flex: 0 0 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: sticky;
+      top: 50%;
+      transform: translateY(-50%);
+      height: fit-content;
+    }
+
+    .review-person img {
+      max-width: 300px;
+    }
+
+    .person-name {
+      margin-top: 0.8rem;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      color: var(--main-pink);
+    }
+
+    .speech-bubbles {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .bubble {
+      background: var(--white);
+      padding: 1rem;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(201,124,138,0.2);
+      position: relative;
+      max-width: 380px;
+    }
+
+    .bubble::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      bottom: 22px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 14px solid var(--white);
+    }
+
+    .bubble img {
+      border-radius: 14px;
+    }
+
+    .star-rating {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.35rem 0.7rem;
+      border-radius: 18px;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--main-pink);
+      font-family: "Playfair Display", serif;
+      box-shadow: 0 6px 15px rgba(217,127,139,0.35);
+    }
+
+    .reviews-title {
+      display: none;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      color: var(--main-pink);
+      margin: 1.5rem 0;
+      font-size: 2rem;
+    }
+
+    .mobile-person {
+      display: none;
+      text-align: center;
+      margin: 2rem auto 1.5rem;
+    }
+
+    .mobile-person img {
+      max-width: 240px;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      background: linear-gradient(to right, var(--soft-blush), var(--main-pink));
       padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
     }
-    footer p a img {
-      display: inline-block;  
-      vertical-align: middle;
-      margin-left: 6px;
+
+    footer img {
       height: 18px;
-      width: auto;
-      opacity: 0.9;
+      margin-left: 6px;
+      vertical-align: middle;
     }
-  }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 768px) {
+
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        background: var(--white);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(201,124,138,0.25);
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .nav-list.active { display: flex; }
+      .hamburger-menu { display: flex; }
+
+      .reviews-title { display: block; }
+      .review-person { display: none; }
+      .mobile-person { display: block; }
+
+      .reviews-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .bubble {
+        max-width: 100%;
+      }
+
+      .bubble::before {
+        display: none;
+      }
+    }
   </style>
 
   <script>
-    function toggleMenu(){
+    function toggleMenu() {
       document.querySelector(".nav-list").classList.toggle("active");
     }
   </script>
-
 </head>
+
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="logo">
-      <a href="#"><img src="mdlogo.png" alt="logo" /></a>
+      <a href="#"><img src="mdlogo.png" alt="logo"></a>
       <p class="logo-title"><a href="#">Marahuyo Designs</a></p>
     </div>
+
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
+
     <ul class="nav-list">
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs">Home</a></li>
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs#about_us">About Us</a></li>
@@ -259,31 +306,35 @@
     </ul>
   </nav>
 
+  <!-- REVIEWS -->
   <section class="reviews-section">
     <h1 class="reviews-title">Happy Customer</h1>
+
     <div class="reviews-wrapper">
       <div class="review-person">
-        <img src="cartoon-person.png" alt="Happy Customer Illustration">
+        <img src="cartoon-person.png" alt="Happy Customer">
         <p class="person-name">Happy Customers</p>
       </div>
+
       <div class="speech-bubbles">
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review1.jpg" alt="Customer Review 1"></div>
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review2.jpg" alt="Customer Review 2"></div>
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review3.jpg" alt="Customer Review 3"></div>
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review4.jpg" alt="Customer Review 4"></div>
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review5.jpg" alt="Customer Review 5"></div>
-        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review6.jpg" alt="Customer Review 6"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review1.jpg"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review2.jpg"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review3.jpg"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review4.jpg"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review5.jpg"></div>
+        <div class="bubble"><div class="star-rating">★★★★★</div><img src="review6.jpg"></div>
       </div>
     </div>
+
     <div class="mobile-person">
-      <img src="cartoon-person.png" alt="Happy Customer Illustration">
+      <img src="cartoon-person.png" alt="Happy Customer">
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 <a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs">Marahuyo Designs</a>. All Rights Reserved.</p>
-    <p>Powered by <a href="https://nexgenixcreativesolutions.github.io">Nex Genix Creative Solutions <img src="ngcs.png" alt="NGCS Logo"></a></p>
+    <p>&copy; 2026 <a href="#">Marahuyo Designs</a>. All Rights Reserved.</p>
+    <p>Powered by Nex Genix Creative Solutions <img src="ngcs.png"></p>
   </footer>
 
 </body>
