@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marahuyo Designs</title>
+  <link rel="icon" type="image/x-icon" href="mdlogo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">  
+  <style>
+  /* =====================
+   GOOGLE FONTS
+===================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap');
+
+/* =====================
+   CSS VARIABLES
+===================== */
+:root {
+  /* MAIN BRAND COLORS (from reference image) */
+  --main-pink: #D97F8B;      /* Gummy Pink – primary */
+  --soft-blush: #FFC2BE;     /* Soft romantic pink */
+  --cream: #FEF0FF;          /* Light creamy background */
+  --sage-green: #ADB680;     /* Floral greenery */
+  --warm-neutral: #E0CFC3;   /* Soft beige */
+
+  /* TEXT & UI */
+  --text-main: #3f2f2f;      /* Dark brown for readability */
+  --white: #ffffff;
+}
+
+
+/* =====================
+   RESET & BASE
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text-main);
+  line-height: 1.7;
+  font-family: "Cormorant Garamond", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+#navbar {
+  background: rgba(254, 240, 255, 0.92);
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 15px rgba(201,124,138,0.15);
+  backdrop-filter: blur(8px);
+}
+    
+/* Logo container – HARD ALIGN FIX */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Logo image */
+.logo img {
+  height: 46px;
+  width: auto;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Logo title */
+.logo-title {
+  margin: 0;                 /* 🚨 removes <p> default spacing */
+  display: flex;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--main-pink);
+  line-height: 1;             /* 🚨 fixes baseline issue */
+}
+    
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list li a {
+  font-weight: 500;
+  color: var(--text-main);
+  position: relative;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--main-pink);
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+  .hamburger-menu .bar {
+  width: 26px;
+  height: 3px;
+  background: var(--main-pink);
+  border-radius: 2px;
+}
+
+.hamburger-menu:hover .bar {
+  background: #c76a76;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background: linear-gradient(
+    to right,
+    var(--soft-blush),
+    var(--main-pink)
+  );
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer img {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 6px;
+  opacity: 0.9;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width: 768px){
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(201,124,138,0.25);
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .welcome-content .slogan {
+    font-size: 2.2rem;
+  }
+}
+
+    /* =====================
+   REVIEWS – TALK BUBBLES
+===================== */
+.reviews-section {
+  padding: 4rem 2.5rem;
+}
+
+.reviews-wrapper {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+/* CARTOON PERSON */
+.review-person {
+  flex: 0.8;
+  text-align: center;
+}
+
+.review-person img {
+  max-width: 220px;
+}
+
+.person-name {
+  margin-top: 0.8rem;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--main-pink);
+}
+
+/* SPEECH BUBBLES */
+.speech-bubbles {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Bubble shape */
+.bubble {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(201,124,138,0.2);
+  position: relative;
+  max-width: 380px;
+}
+
+/* Bubble tail */
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  bottom: 22px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 14px solid var(--white);
+}
+
+/* Review image inside bubble */
+.bubble img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .reviews-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bubble {
+    max-width: 100%;
+  }
+
+  .bubble::before {
+    display: none;
+  }
+}
+    
+/* =====================
+   PINK GLOWING STARS
+===================== */
+.star-rating {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.35rem 0.7rem;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--main-pink);
+  font-family: "Playfair Display", serif;
+  text-shadow:
+    0 0 4px rgba(217,127,139,0.6),
+    0 0 8px rgba(217,127,139,0.5),
+    0 0 14px rgba(217,127,139,0.4);
+  box-shadow:
+    0 6px 15px rgba(217,127,139,0.35),
+    inset 0 0 8px rgba(217,127,139,0.25);
+}
+
+    @keyframes softGlow {
+  0%   { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
+  50%  { text-shadow: 0 0 10px rgba(217,127,139,0.7); }
+  100% { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
+}
+
+.star-rating {
+  animation: softGlow 3.5s ease-in-out infinite;
+}
+
+  </style>
+  <script>
+    function toggleMenu(){
+      document.querySelector(".nav-list").classList.toggle("active");
+    }
+  </script>
+
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="logo">
+      <a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs"><img src="mdlogo.png" alt="logo" /></a>
+      <p class="logo-title"><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs">Marahuyo Designs</a></p>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/">Home</a></li>
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/#about_us">About Us</a></li>
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/products">Products</a></li>
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/reviews">Reviews</a></li>
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="reviews-section">
+  <div class="reviews-wrapper">
+
+    <!-- Cartoon Person -->
+    <div class="review-person">
+      <img src="cartoon-person.png" alt="Happy Customer Illustration">
+      <p class="person-name">Happy Customer</p>
+    </div>
+
+    <!-- Speech Bubbles -->
+    <div class="speech-bubbles">
+
+    <div class="bubble">
+    <div class="star-rating">
+    ★★★★★
+    </div>
+    <img src="review1.jpg" alt="Customer Review 1">
+    </div>
+
+    <div class="bubble">
+    <div class="star-rating">
+    ★★★★★
+    </div>
+    <img src="review1.jpg" alt="Customer Review 1">
+    </div>
+
+    <div class="bubble">
+    <div class="star-rating">
+    ★★★★★
+    </div>
+    <img src="review1.jpg" alt="Customer Review 1">
+    </div>
+
+    <div class="bubble">
+    <div class="star-rating">
+    ★★★★★
+    </div>
+    <img src="review1.jpg" alt="Customer Review 1">
+    </div>
+
+    <div class="bubble">
+    <div class="star-rating">
+    ★★★★★
+    </div>
+    <img src="review1.jpg" alt="Customer Review 1">
+    </div>
+
+  </div>
+
+  </div>
+</section>
+
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 <a href="nexgenixcreativesolutions.github.io/marahuyo-designs">Marahuyo Designs</a>. All Rights Reserved. </p>
+    <p>Powered by <a href="https://nexgenixcreativesolutions.github.io">Nex Genix Creative Solutions <img src="ngcs.png" alt="NGCS Logo"></a></p>
+  </footer>
+</body>
+</html>
