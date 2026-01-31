@@ -237,14 +237,15 @@ section h2 {
 }
 
 /* =====================
-   PRODUCTS
+   PRODUCTS (ALIGNMENT FIX – MATCHES VARIANTS PAGE)
 ===================== */
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   max-width: 1100px;
   margin: 0 auto;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .product-card {
@@ -254,7 +255,6 @@ section h2 {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  min-height: 460px;
   transition: transform 0.3s ease;
 }
 
@@ -262,37 +262,48 @@ section h2 {
   transform: translateY(-6px);
 }
 
+/* Product image */
+.product-card img {
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+/* Product title – SAME alignment as variants */
 .product-card h3 {
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: var(--old-rose);
   text-align: center;
+  margin-bottom: 0.6rem;
+  min-height: 2.6em; /* keeps titles aligned */
 }
 
+/* Description spacer (even if empty) */
 .product-description {
-  font-size: 0.9rem;
-  color: #6a5a5a;
   flex-grow: 1;
 }
 
-.product-price {
-  font-weight: bold;
-  color: var(--old-rose);
-  margin: 0.8rem 0;
+/* Button wrapper – forces bottom alignment */
+.product-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
 }
 
+/* Purchase button – matches variants style */
 .buy-button {
-   background: linear-gradient(
+  background: linear-gradient(
     135deg,
     var(--soft-blush),
     var(--main-pink)
   );
   color: white;
   border: none;
-  padding: 0.6rem 1.4rem;
+  padding: 0.55rem 1.6rem;
   border-radius: 30px;
   cursor: pointer;
   font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
 }
 
 .buy-button:hover {
@@ -567,7 +578,10 @@ begins with the initial of our crafter’s family name, making it even more pers
       <img src="product1.jpg" alt="Keices in Pink" class="product-image">
       <h3>Keices in Pink</h3>
       <p class="product-description"></p>
-      <a href=""><button class="buy-button">Purchase</button></a>
+      <div class="product-actions">
+  <a href=""><button class="buy-button">Purchase</button></a>
+</div>
+
     </div>
 
     <!-- Product Card -->
@@ -575,7 +589,10 @@ begins with the initial of our crafter’s family name, making it even more pers
       <img src="product2.jpg" alt="Gessa" class="product-image">
       <h3>Gessa</h3>
       <p class="product-description"></p>
-      <a href=""><button class="buy-button">Purchase</button></a>
+      <div class="product-actions">
+  <a href=""><button class="buy-button">Purchase</button></a>
+</div>
+
     </div>
 
     <!-- Product Card -->
@@ -583,7 +600,10 @@ begins with the initial of our crafter’s family name, making it even more pers
       <img src="product3.jpg" alt="Liz in Beige" class="product-image">
       <h3>Liz in Beige</h3>
       <p class="product-description"></p>
-      <a href=""><button class="buy-button">Purchase</button></a>
+      <div class="product-actions">
+  <a href=""><button class="buy-button">Purchase</button></a>
+</div>
+
     </div>
 
     <div class="view-more">
