@@ -204,15 +204,20 @@ img {
 ===================== */
 @media (max-width: 768px) {
   .contact-wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
   }
 
+  .contact-text {
+    order: 1;
+  }
+
   .contact-image {
+    order: 2;              /* 👈 QR appears AFTER phone */
     justify-content: center;
+    margin-top: 1.5rem;    /* nice breathing space */
   }
 }
-
 
 /* =====================
    FOOTER
