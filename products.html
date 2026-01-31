@@ -266,6 +266,7 @@ section h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: var(--old-rose);
+  text-align: center;
 }
 
 .product-description {
@@ -669,13 +670,35 @@ footer img {
       <button class="buy-button">Purchase</button>
     </div>
 
-    <!-- Product Card -->
-    <div class="product-card">
-      <img src="product3.jpg" alt="Liz in Beige" class="product-image">
-      <h3>Liz in Beige</h3>
-      <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
-    </div>
+    <div class="product-card variant-card">
+
+  <div class="variant-slider">
+
+    <div class="variant-track">
+      <!-- Variant 1 -->
+      <div class="variant">
+        <img src="product18.jpg" alt="Liz">
+        <h3>Liz</h3>
+      </div>
+
+      <!-- Variant 2 -->
+      <div class="variant">
+        <img src="product3.jpg" alt="Liz in Beige">
+        <h3>Liz in Beige</h3>
+      </div>
+    </div> <!-- ✅ CLOSE variant-track -->
+
+    <!-- Navigation -->
+    <button class="variant-btn prev">‹</button>
+    <button class="variant-btn next">›</button>
+
+  </div> <!-- ✅ CLOSE variant-slider -->
+
+  <p class="product-description"></p>
+
+  <button class="buy-button">Purchase</button>
+
+</div> <!-- ✅ CLOSE product-card -->
 
     <!-- Product Card -->
     <div class="product-card">
