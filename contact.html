@@ -146,6 +146,75 @@ img {
 }
 
 /* =====================
+   CONTACT SECTION
+===================== */
+.contact-section {
+  padding: 4rem 2.5rem;
+}
+
+.contact-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* LEFT TEXT */
+.contact-text {
+  flex: 1;
+}
+
+.contact-text h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--main-pink);
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.contact-item strong {
+  color: var(--sage-green);
+  font-weight: 600;
+}
+
+/* RIGHT IMAGE */
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-image img {
+  max-width: 320px;
+  border-radius: 24px;
+  box-shadow: 0 15px 30px rgba(201,124,138,0.25);
+  background: var(--white);
+  padding: 1rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .contact-image {
+    justify-content: center;
+  }
+}
+
+
+/* =====================
    FOOTER
 ===================== */
 footer {
@@ -222,7 +291,32 @@ footer img {
     </ul>
   </nav>
   
-  <img src="mdfbqr.png">
+<section class="contact-section">
+  <div class="contact-wrapper">
+
+    <div class="contact-text">
+      <h2>Visit or Contact Us</h2>
+
+      <p class="contact-item">
+        <strong>Address</strong><br>
+        Ayala, Zamboanga City,<br>
+        Zamboanga del Sur 7000,<br>
+        Philippines
+      </p>
+
+      <p class="contact-item">
+        <strong>Phone</strong><br>
+        +63 915 993 2738
+      </p>
+    </div>
+
+    <div class="contact-image">
+      <img src="mdfbqr.png" alt="Marahuyo Designs QR Code">
+    </div>
+
+  </div>
+</section>
+
 
   
   <!-- Footer -->
