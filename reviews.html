@@ -102,12 +102,16 @@
   }
   .review-person img { width: 100%; max-width: 300px; }
 
+  /* Mobile cartoon image (hidden on desktop) */
+  .mobile-person { display: none; }
+
   /* Speech bubbles */
   .speech-bubbles {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* spread bubbles evenly vertically */
+    gap: 1.2rem; /* spacing between bubbles */
   }
   .bubble {
     background: var(--white);
@@ -176,34 +180,24 @@
      RESPONSIVE
   ===================== */
   @media (max-width: 768px){
-    .nav-list {
-      display: none;
-      flex-direction: column;
-      background: var(--white);
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      padding: 1rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(201,124,138,0.25);
-    }
+    .nav-list { display: none; flex-direction: column; background: var(--white); position: absolute; top: 70px; right: 20px; padding: 1rem; border-radius: 20px; box-shadow: 0 10px 20px rgba(201,124,138,0.25); }
     .nav-list.active { display: flex; }
     .hamburger-menu { display: flex; }
 
-    /* Show mobile page title */
+    /* Mobile page title */
     .reviews-title { display: block; }
 
     /* Hide desktop sticky cartoon */
     .review-person { display: none; }
 
-    /* Speech bubbles full width */
+    /* Mobile cartoon image */
+    .mobile-person { display: block; text-align: center; margin: 4rem auto 3rem; }
+    .mobile-person img { max-width: 240px; }
+
+    /* Speech bubbles flow */
     .reviews-wrapper { flex-direction: column; align-items: center; }
     .bubble { max-width: 100%; }
     .bubble::before { display: none; }
-
-    /* Mobile cartoon between reviews and footer */
-    .mobile-person { display: block; text-align: center; margin: 4rem auto 3rem; }
-    .mobile-person img { max-width: 240px; }
   }
   </style>
 
@@ -219,8 +213,8 @@
   <!-- Navigation Bar -->
   <nav id="navbar">
     <div class="logo">
-      <a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs"><img src="mdlogo.png" alt="logo" /></a>
-      <p class="logo-title"><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs">Marahuyo Designs</a></p>
+      <a href="#"><img src="mdlogo.png" alt="logo" /></a>
+      <p class="logo-title"><a href="#">Marahuyo Designs</a></p>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div class="bar"></div>
@@ -261,7 +255,7 @@
 
     </div>
 
-    <!-- Mobile cartoon image after reviews -->
+    <!-- Mobile cartoon image -->
     <div class="mobile-person">
       <img src="cartoon-person.png" alt="Happy Customer Illustration">
     </div>
