@@ -613,30 +613,36 @@ footer img {
   background: #f6eaea;
 }
 
-    /* =====================
-   MOBILE SWIPE FOR PRODUCTS
+/* =====================
+   MOBILE SWIPE — VARIANT PRODUCTS ONLY
 ===================== */
 @media (max-width: 768px) {
-  .products-container {
+  .variant-slider {
+    overflow-x: hidden;
+    touch-action: pan-y; /* allow vertical scroll */
+  }
+
+  .variant-track {
     display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 0 1rem 1rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    will-change: transform;
   }
 
-  .product-card {
-    flex: 0 0 80%;
-    scroll-snap-align: center;
+  .variant {
+    flex: 0 0 100%;
   }
 
-  /* Hide scrollbar (clean look) */
-  .products-container::-webkit-scrollbar {
-    display: none;
+    .variant-slider::after {
+    content: "Swipe →";
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 0.75rem;
+    color: rgba(0,0,0,0.45);
+    background: rgba(255,255,255,0.7);
+    padding: 2px 8px;
+    border-radius: 12px;
   }
 }
-
   </style>
   <script>
     function toggleMenu(){
