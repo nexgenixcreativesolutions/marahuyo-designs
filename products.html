@@ -237,16 +237,18 @@ section h2 {
 }
 
 /* =====================
-   PRODUCTS
+   PRODUCTS (MATCH VARIANTS PAGE ALIGNMENT)
 ===================== */
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   max-width: 1100px;
   margin: 0 auto;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
+/* Card */
 .product-card {
   background: var(--white);
   border-radius: 22px;
@@ -254,7 +256,6 @@ section h2 {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  min-height: 460px;
   transition: transform 0.3s ease;
 }
 
@@ -262,37 +263,48 @@ section h2 {
   transform: translateY(-6px);
 }
 
+/* Ensure variant slider & image spacing match */
+.product-card img,
+.variant-slider {
+  margin-bottom: 0.9rem;
+}
+
+/* Product title – SAME vertical rhythm */
 .product-card h3 {
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: var(--old-rose);
   text-align: center;
+  margin: 0.4rem 0 0.8rem;
+  min-height: 2.6em; /* 🔥 keeps all titles aligned */
 }
 
+/* Spacer so buttons align bottom */
 .product-description {
-  font-size: 0.9rem;
-  color: #6a5a5a;
   flex-grow: 1;
 }
 
-.product-price {
-  font-weight: bold;
-  color: var(--old-rose);
-  margin: 0.8rem 0;
+/* Action area */
+.product-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
 }
 
+/* Purchase button – exact visual match */
 .buy-button {
-   background: linear-gradient(
+  background: linear-gradient(
     135deg,
     var(--soft-blush),
     var(--main-pink)
   );
   color: white;
   border: none;
-  padding: 0.6rem 1.4rem;
+  padding: 0.55rem 1.6rem;
   border-radius: 30px;
   cursor: pointer;
   font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
 }
 
 .buy-button:hover {
@@ -622,7 +634,7 @@ footer img {
     </div>
     <ul class="nav-list">
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs">Home</a></li>
-      <li><a href="#about_us">About Us</a></li>
+      <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/#about_us">About Us</a></li>
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/products">Products</a></li>
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/reviews">Reviews</a></li>
       <li><a href="https://nexgenixcreativesolutions.github.io/marahuyo-designs/contact">Contact</a></li>
@@ -659,15 +671,20 @@ footer img {
 
   <p class="product-description"></p>
 
-  <button class="buy-button">Purchase</button>
+  <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
 
 </div> <!-- ✅ CLOSE product-card -->
+    
     <!-- Product Card -->
     <div class="product-card">
       <img src="product2.jpg" alt="Gessa" class="product-image">
       <h3>Gessa</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <div class="product-card variant-card">
@@ -696,7 +713,9 @@ footer img {
 
   <p class="product-description"></p>
 
-  <button class="buy-button">Purchase</button>
+  <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
 
 </div> <!-- ✅ CLOSE product-card -->
 
@@ -705,7 +724,9 @@ footer img {
       <img src="product5.jpg" alt="Sinara" class="product-image">
       <h3>Sinara</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -713,7 +734,9 @@ footer img {
       <img src="product7.jpg" alt="Nessa" class="product-image">
       <h3>Nessa</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -721,7 +744,9 @@ footer img {
       <img src="product17.jpg" alt="Lily" class="product-image">
       <h3>Lily</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -729,7 +754,9 @@ footer img {
       <img src="product4.jpg" alt="Wicked" class="product-image">
       <h3>Wicked</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
     
     <!-- Product Card -->
@@ -737,7 +764,9 @@ footer img {
       <img src="product6.jpg" alt="Alamara" class="product-image">
       <h3>Alamara</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -745,7 +774,9 @@ footer img {
       <img src="product8.jpeg" alt="Lia" class="product-image">
       <h3>Lia</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
     
     <!-- Product Card -->
@@ -753,7 +784,9 @@ footer img {
       <img src="product9.jpg" alt="Jaz" class="product-image">
       <h3>Jaz</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -761,7 +794,9 @@ footer img {
       <img src="product10.jpg" alt="Pia" class="product-image">
       <h3>Pia</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <div class="product-card variant-card">
@@ -806,7 +841,9 @@ footer img {
   </div>
 
   <p class="product-description"></p>
-  <button class="buy-button">Purchase</button>
+  <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
 </div>
 
     <!-- Product Card -->
@@ -814,7 +851,9 @@ footer img {
       <img src="product19.jpg" alt="Chell" class="product-image">
       <h3>Chell</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
     <!-- Product Card -->
@@ -822,7 +861,9 @@ footer img {
       <img src="product20.jpg" alt="tangled" class="product-image">
       <h3>Tangled</h3>
       <p class="product-description"></p>
-      <button class="buy-button">Purchase</button>
+      <div class="product-actions">
+    <a href="ttps://m.me/425614237571785"><button class="buy-button">Purchase</button></a>
+  </div>
     </div>
 
   </div>
