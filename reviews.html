@@ -199,29 +199,32 @@ footer img {
 REVIEWS – TALK BUBBLES
 ===================== */
 .reviews-section {
-  padding: 6rem 2.5rem 4rem; /* increased top padding */
+  padding: 6rem 2.5rem;
+  min-height: 100vh; /* fills the screen */
 }
 
 .reviews-wrapper {
   max-width: 1000px;
   margin: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch; /* 🔑 stretch top to bottom */
   gap: 2.5rem;
+  min-height: 100%;
 }
 
 /* CARTOON PERSON */
 .review-person {
-  flex: 0 0 320px; /* fixed column width */
+  flex: 0 0 320px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* 🔑 top & bottom */
   align-items: center;
 }
 
 .review-person img {
   width: 100%;
   max-width: 300px;
-  margin-top: 1.5rem; /* pushes it down from navbar visually */
+  margin-top: 2rem;
 }
 
 .person-name {
@@ -233,10 +236,10 @@ REVIEWS – TALK BUBBLES
 
 /* SPEECH BUBBLES */
 .speech-bubbles {
-  flex: 1.2;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  justify-content: space-between; /* spreads bubbles vertically */
 }
 
 /* Bubble shape */
