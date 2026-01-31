@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">  
+
   <style>
   /* =====================
      CSS VARIABLES
@@ -70,7 +71,14 @@
     text-align: center;
     font-size: 0.9rem;
   }
-  footer img { height: 18px; width: auto; vertical-align: middle; margin-left: 6px; opacity: 0.9; }
+  footer img { 
+    height: 18px; 
+    width: auto; 
+    vertical-align: middle; 
+    margin-left: 6px; 
+    opacity: 0.9; 
+    display: inline-block; 
+  }
 
   /* =====================
      REVIEWS SECTION
@@ -79,7 +87,6 @@
     padding: 6rem 2.5rem;
     min-height: 100vh;
   }
-
   .reviews-wrapper {
     max-width: 1000px;
     margin: auto;
@@ -89,7 +96,6 @@
     min-height: 100%;
   }
 
-  /* Sticky cartoon person (desktop) */
   .review-person {
     flex: 0 0 320px;
     display: flex;
@@ -102,16 +108,14 @@
   }
   .review-person img { width: 100%; max-width: 300px; }
 
-  /* Mobile cartoon image (hidden on desktop) */
   .mobile-person { display: none; }
 
-  /* Speech bubbles */
   .speech-bubbles {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* spread bubbles evenly vertically */
-    gap: 1.2rem; /* spacing between bubbles */
+    justify-content: space-between;
+    gap: 1.2rem;
   }
   .bubble {
     background: var(--white);
@@ -141,7 +145,6 @@
     color: var(--main-pink);
   }
 
-  /* Page title for mobile (hidden desktop) */
   .reviews-title {
     display: none;
     text-align: center;
@@ -152,9 +155,6 @@
     font-size: 2rem;
   }
 
-  /* =====================
-     STAR RATING GLOW
-  ===================== */
   .star-rating {
     position: absolute;
     top: 12px;
@@ -168,36 +168,65 @@
     font-family: "Playfair Display", serif;
     text-shadow: 0 0 4px rgba(217,127,139,0.6),0 0 8px rgba(217,127,139,0.5),0 0 14px rgba(217,127,139,0.4);
     box-shadow: 0 6px 15px rgba(217,127,139,0.35), inset 0 0 8px rgba(217,127,139,0.25);
+    animation: softGlow 3.5s ease-in-out infinite;
   }
   @keyframes softGlow {
     0%   { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
     50%  { text-shadow: 0 0 10px rgba(217,127,139,0.7); }
     100% { text-shadow: 0 0 4px rgba(217,127,139,0.5); }
   }
-  .star-rating { animation: softGlow 3.5s ease-in-out infinite; }
 
   /* =====================
      RESPONSIVE
   ===================== */
   @media (max-width: 768px){
-    .nav-list { display: none; flex-direction: column; background: var(--white); position: absolute; top: 70px; right: 20px; padding: 1rem; border-radius: 20px; box-shadow: 0 10px 20px rgba(201,124,138,0.25); }
+
+    /* Navbar */
+    .nav-list {
+      display: none; 
+      flex-direction: column; 
+      background: var(--white); 
+      position: absolute; 
+      top: 70px; 
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem; 
+      border-radius: 20px; 
+      box-shadow: 0 10px 20px rgba(201,124,138,0.25); 
+      align-items: center; 
+      text-align: center;
+      gap: 1rem;
+      z-index: 999;
+    }
     .nav-list.active { display: flex; }
     .hamburger-menu { display: flex; }
 
-    /* Mobile page title */
+    /* Reviews Section */
     .reviews-title { display: block; }
-
-    /* Hide desktop sticky cartoon */
     .review-person { display: none; }
-
-    /* Mobile cartoon image */
     .mobile-person { display: block; text-align: center; margin: 4rem auto 3rem; }
     .mobile-person img { max-width: 240px; }
-
-    /* Speech bubbles flow */
-    .reviews-wrapper { flex-direction: column; align-items: center; }
+    .reviews-wrapper { flex-direction: column; align-items: center; gap: 2rem; }
     .bubble { max-width: 100%; }
     .bubble::before { display: none; }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;    
+      gap: 0.5rem;            
+      text-align: center;     
+      padding: 1.5rem;
+    }
+    footer p a img {
+      display: inline-block;  
+      vertical-align: middle;
+      margin-left: 6px;
+      height: 18px;
+      width: auto;
+      opacity: 0.9;
+    }
   }
   </style>
 
@@ -231,19 +260,12 @@
   </nav>
 
   <section class="reviews-section">
-
-    <!-- Mobile page title -->
     <h1 class="reviews-title">Happy Customer</h1>
-
     <div class="reviews-wrapper">
-
-      <!-- Desktop sticky cartoon -->
       <div class="review-person">
         <img src="cartoon-person.png" alt="Happy Customer Illustration">
-        <p class="person-name">Happy Customer</p>
+        <p class="person-name">Happy Customers</p>
       </div>
-
-      <!-- Speech Bubbles -->
       <div class="speech-bubbles">
         <div class="bubble"><div class="star-rating">★★★★★</div><img src="review1.jpg" alt="Customer Review 1"></div>
         <div class="bubble"><div class="star-rating">★★★★★</div><img src="review2.jpg" alt="Customer Review 2"></div>
@@ -252,14 +274,10 @@
         <div class="bubble"><div class="star-rating">★★★★★</div><img src="review5.jpg" alt="Customer Review 5"></div>
         <div class="bubble"><div class="star-rating">★★★★★</div><img src="review6.jpg" alt="Customer Review 6"></div>
       </div>
-
     </div>
-
-    <!-- Mobile cartoon image -->
     <div class="mobile-person">
       <img src="cartoon-person.png" alt="Happy Customer Illustration">
     </div>
-
   </section>
 
   <!-- Footer -->
